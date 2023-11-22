@@ -1,7 +1,9 @@
 from python import Python
 
+
 fn quote() -> String:
     return "The quick brown fox jumps over the lazy dog."
+
 
 fn joke() raises:
     let time = Python.import_module("time")
@@ -14,6 +16,7 @@ fn joke() raises:
     print(".")
     print("To get to the other side!")
 
+
 fn poem() -> String:
     return """
     Roses are red
@@ -22,19 +25,22 @@ fn poem() -> String:
     How about you?
     """
 
+
 fn main() raises:
     # Import input from Python
     let py = Python.import_module("builtins")
 
-    print("""
+    print(
+        """
 Hi, I'm a Mojo Program
 What would you like to do?
 1) Hear a quote
 2) Hear a joke
 3) Hear a poem
 q) Quit
-    """)
-   
+    """
+    )
+
     var choice: PythonObject = ""
 
     while choice != "q":
@@ -53,4 +59,3 @@ q) Quit
             return
         else:
             print("I don't know how to do that.")
-            
